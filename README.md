@@ -22,7 +22,7 @@
 
 ## Time spent
 
-### Preparations
+### Preparations (30m)
 
 - 15m on reading the task
 - 15m on getting the repository and readme docs in place
