@@ -20,7 +20,7 @@
 
 `// todo`
 
-## Time spent
+## Time spent (30m)
 
 ### Preparations (30m)
 
