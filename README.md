@@ -28,15 +28,15 @@ After a lecture of the above, I decided to base my solution on intersection obse
 
 `// todo`
 
-## Time spent: 3h
+## Time spent: 2h
 
-### Preparations: 3h
+### Preparations: 2h
 
 - 15m on reading the task
 - 15m on getting the repository and readme docs in place
-- 30m on research and filtering out [useful web resources](#implementation-strategy) from the [silly ones](https://dev.to/garryxiao/react-infinite-loader-with-typescript-idb)
-- 1h on going through the abovementioned resources ☕️📚 and defining implementation strategy
-- 1h for a bio break after an exhausting, focus intense analysis 🌴
+- 15m on research and filtering out [useful web resources](#implementation-strategy) from the [silly ones](https://dev.to/garryxiao/react-infinite-loader-with-typescript-idb)
+- 45m on going through the abovementioned resources ☕️📚 and defining implementation strategy
+- 30m for a bio break after an exhausting, focus intense analysis 🌴
 
 ### Code setup
 
