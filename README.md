@@ -28,7 +28,7 @@ After a lecture of the above, I decided to base my solution on intersection obse
 
 `// todo`
 
-## Time spent: 3h 45m
+## Time spent: 5h
 
 ### Preparations: 2h
 
@@ -45,9 +45,10 @@ After a lecture of the above, I decided to base my solution on intersection obse
 - 45m on refinement: extracting the smaller components, variables and adding loading indicators
 - v0.1.0 🎉
 
-### Implementation
+### Implementation 1h 15m
 
 - 15m on initial loading state
+- 1h for the infinite scroll mechanics, including memoization for the list entries
 
 ### Refinement
 

@@ -1,26 +1,35 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
+import { useInfiniteLoading } from "./domain/hook";
 import { Preface } from './components/Preface'
 import { List } from './components/List'
-import type { TEntry } from './domain/types'
-import { fetchEntries } from './domain/api'
 import { FORCED_WIDTH } from './constants'
 import { Indicator } from "./components/Indicator";
 import { SkeletonArmy } from "./components/SkeletonArmy";
 
 export const App = () => {
-  const [entries, setEntries] = useState<Array<TEntry>>([])
-  const [loading, setLoading] = useState<boolean>(true)
+  const { entries, addEntries } = useInfiniteLoading();
+  const trigger = useRef(null)
 
   useEffect(() => {
-    fetchEntries()
-      .then(entries => {
-        setEntries(entries || [])
-        setLoading(false)
-      })
-      .catch(() => {
-        console.warn('something went wrong when loading entries') // todo: handle errors
-      })
-  }, [])
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting) {
+          addEntries()
+        }
+      },
+      { threshold: 1 }
+    );
+
+    if (trigger.current) {
+      observer.observe(trigger.current);
+    }
+
+    return () => {
+      if (trigger.current) {
+        observer.unobserve(trigger.current);
+      }
+    };
+  }, [trigger])
 
   return (
     <div className="flex flex-col items-center">
@@ -30,7 +39,8 @@ export const App = () => {
         </header>
 
         <main className="flex flex-col gap-8">
-          {loading ? <SkeletonArmy /> : <List entries={entries} />}
+          {entries.length ? <List entries={entries} /> : <SkeletonArmy />}
+          <div ref={trigger} />
         </main>
 
         <footer>
