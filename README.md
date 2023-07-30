@@ -47,7 +47,7 @@ After a lecture of the above, I decided to base my solution on intersection obse
 
 ### Implementation
 
-- 13:00 basics of the infinite scroll mechanics
+- 15m on initial loading state
 
 ### Refinement
 
