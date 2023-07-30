@@ -28,7 +28,7 @@ After a lecture of the above, I decided to base my solution on intersection obse
 
 `// todo`
 
-## Time spent: 2h
+## Time spent: 3h
 
 ### Preparations: 2h
 
@@ -38,9 +38,10 @@ After a lecture of the above, I decided to base my solution on intersection obse
 - 45m on going through the abovementioned resources ☕️📚 and defining implementation strategy
 - 30m for a bio break after an exhausting, focus intense analysis 🌴
 
-### Code setup
+### Code setup 1h
 
 - 30m on vite, react, tailwind, favicon, fontsource, domain and vercel deployment setup
+- 30m on initial CSS for the website
 
 `// todo`
 
