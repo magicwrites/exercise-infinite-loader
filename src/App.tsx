@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 import { Preface } from './components/Preface'
-import { Entry } from './components/Entry'
+import { List } from './components/List'
 import type { TEntry } from './domain/types'
 import { fetchEntries } from './domain/api'
 import { FORCED_WIDTH } from './constants'
 import { Indicator } from "./components/Indicator";
+import { SkeletonArmy } from "./components/SkeletonArmy";
 
 export const App = () => {
   const [entries, setEntries] = useState<Array<TEntry>>([])
+  const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
     fetchEntries()
-      .then(entries => setEntries(entries || []))
+      .then(entries => {
+        setEntries(entries || [])
+        setLoading(false)
+      })
       .catch(() => {
         console.warn('something went wrong when loading entries') // todo: handle errors
       })
@@ -25,7 +30,7 @@ export const App = () => {
         </header>
 
         <main className="flex flex-col gap-8">
-          {entries.map(entry => <Entry author={entry.author} image={entry.download_url} href={entry.url} key={entry.id} />)}
+          {loading ? <SkeletonArmy /> : <List entries={entries} />}
         </main>
 
         <footer>

@@ -43,12 +43,11 @@ After a lecture of the above, I decided to base my solution on intersection obse
 - 30m on vite, react, tailwind, favicon, fontsource, domain and vercel deployment setup
 - 30m on initial CSS for the website
 - 45m on refinement: extracting the smaller components, variables and adding loading indicators
-
-`// todo`
+- v0.1.0 🎉
 
 ### Implementation
 
-`// todo`
+- 13:00 basics of the infinite scroll mechanics
 
 ### Refinement
 
