@@ -40,6 +40,8 @@ After a lecture of the above, I decided to base my solution on intersection obse
 
 ### Code setup
 
+- 15m on vite, react, tailwind, favicon and fontsource setup
+
 `// todo`
 
 ### Implementation
