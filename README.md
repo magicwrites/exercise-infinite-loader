@@ -40,7 +40,7 @@ After a lecture of the above, I decided to base my solution on intersection obse
 
 ### Code setup
 
-- 15m on vite, react, tailwind, favicon and fontsource setup
+- 30m on vite, react, tailwind, favicon, fontsource, domain and vercel deployment setup
 
 `// todo`
 
