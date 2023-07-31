@@ -1,1 +1,0 @@
-export const getFirstPage = () => Math.round(Math.random() * 10)

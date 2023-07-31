@@ -57,3 +57,4 @@ The code contains some shortcomings, intentionally left out:
 ### Refinement
 
 - 15m on moving some constants to better locations, [updates on flaws](#known-flaws-and-next-steps)
+- 15m on adding a missing "generic" loader requirement and moving some files around

@@ -1,15 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import { fetchEntries } from "./api";
-import { getFirstPage } from "./math";
-import type { TEntry } from "./types";
 
-export const useInfiniteLoading = () => {
-    const [entries, setEntries] = useState<Array<TEntry>>([])
+export const getFirstPage = () => Math.round(Math.random() * 10) // make the application less stagnant
+
+export const useInfiniteLoading = <TItem>({ fetcher }: { fetcher: (page: number) => Promise<Array<TItem> | undefined> }) => {
+    const [entries, setEntries] = useState<Array<TItem>>([])
     const initialized = useRef(false);
     const page = useRef(getFirstPage());
 
     const addEntries = async () => {
-        const newEntries = await fetchEntries(page.current);
+        const newEntries = await fetcher(page.current);
 
         if (newEntries) {
             setEntries(existing => [...existing, ...newEntries]);

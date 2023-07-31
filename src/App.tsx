@@ -1,13 +1,14 @@
 import { useEffect, useRef } from "react";
-import { useInfiniteLoading } from "./domain/hook";
+import { useInfiniteLoading } from "./hooks/loader";
 import { Preface } from './components/Preface'
 import { List } from './components/List'
 import { FORCED_WIDTH } from './constants'
 import { Indicator } from "./components/Indicator";
 import { SkeletonArmy } from "./components/SkeletonArmy";
+import { fetchEntries, type TEntry } from "./domain/entries";
 
 export const App = () => {
-  const { entries, addEntries } = useInfiniteLoading();
+  const { entries, addEntries } = useInfiniteLoading<TEntry>({ fetcher: fetchEntries });
   const trigger = useRef(null)
 
   useEffect(() => {
