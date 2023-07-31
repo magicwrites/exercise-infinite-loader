@@ -1,4 +1,3 @@
-
 ## Technical Challenge
 
 Create an infinite loader component, with the following requirements:

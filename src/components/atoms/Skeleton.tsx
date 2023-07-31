@@ -6,4 +6,4 @@ export const Skeleton = () => (
       <div className="underline">source</div>
     </div>
   </section>
-)
+);

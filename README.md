@@ -37,13 +37,16 @@ The code contains some shortcomings, intentionally left out:
 
 - the list just keeps on growing, eventually the browser will die out, there is no "clean up" code or virtualisation in place to take care of that
 - the list could make a better use of high resolution screens, but that would complicate things significantly and responsivity was not a requirement
+- loader relies on [`<T extends Object>`](https://stackoverflow.com/a/53958176), I am not really sure whether I did it right
 
 ## Next steps?
 
 Given another set of 8 hours, I would:
 
 - add a storybook for all the "atoms" in the components directory (skipped for now, it adds quite a lot of dependencies)
-- add prettier as a development static code analysis and formatting tool (skipped for the same reason as above)
+- add prettier as a development static code analysis and formatting tool (should be there from the start really)
+- moved constants to environmental variables, `.env.sample` would suit this application better
+- reconsider whether there is a better way to configure how rendering of items should work
 
 ## Time spent: 7h 30m
 
@@ -74,3 +77,7 @@ Given another set of 8 hours, I would:
 - 1h 30m on actually building the Loader component 😱 addressing the configurable rendering part
 - 15m on moving things around in directories for arguably more intuitive splits
 - v1.2.0 🎉
+
+### Refinement
+
+- 15m to update docs, run prettier

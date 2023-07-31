@@ -5,21 +5,24 @@ import { SkeletonArmy } from "./atoms/SkeletonArmy";
 
 interface ILoaderProps<T> {
   fetcher: (page: number) => Promise<Array<T> | undefined>;
-  List: ComponentType<{ entries: Array<T> }>
+  List: ComponentType<{ entries: Array<T> }>;
 }
 
-export const Loader = <T extends Object>({ fetcher, List }: ILoaderProps<T>) => {
+export const Loader = <T extends Object>({
+  fetcher,
+  List,
+}: ILoaderProps<T>) => {
   const { entries, addEntries } = useInfiniteLoading<T>({ fetcher });
-  const trigger = useRef(null)
+  const trigger = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => {
+      (entries) => {
         if (entries[0].isIntersecting) {
-          addEntries()
+          addEntries();
         }
       },
-      { threshold: 1 }
+      { threshold: 1 },
     );
 
     if (trigger.current) {
@@ -31,7 +34,7 @@ export const Loader = <T extends Object>({ fetcher, List }: ILoaderProps<T>) => 
         observer.unobserve(trigger.current);
       }
     };
-  }, [trigger])
+  }, [trigger]);
 
   return (
     <>
@@ -44,5 +47,5 @@ export const Loader = <T extends Object>({ fetcher, List }: ILoaderProps<T>) => 
         <Indicator />
       </footer>
     </>
-  )
-}
+  );
+};
