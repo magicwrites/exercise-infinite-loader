@@ -7,9 +7,3 @@ export const Skeleton = () => (
     </div>
   </section>
 )
-
-export const SkeletonArmy = ({ amount }: { amount?: number }) => (
-  <>
-    {Object.keys(new Array(amount || 30).fill(undefined)).map((key) => <Skeleton key={key} />)}
-  </>
-)

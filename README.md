@@ -24,9 +24,12 @@ After a lecture of the above, I decided to base my solution on intersection obse
 
 `// todo`
 
-## Known flaws and next steps
+## Known flaws
 
-`// todo`
+The code contains some shortcomings, intentionally left out:
+
+- the list just keeps on growing, eventually the browser will die out, there is no "clean up" code or virtualisation in place to take care of that
+- the list could make a better use of high resolution screens, but that would complicate things significantly and responsivity was not a requirement
 
 ## Time spent: 5h
 
@@ -49,7 +52,8 @@ After a lecture of the above, I decided to base my solution on intersection obse
 
 - 15m on initial loading state
 - 1h for the infinite scroll mechanics, including memoization for the list entries
+- v1.0.0 🎉
 
 ### Refinement
 
-`// todo`
+- 15m on moving some constants to better locations, [updates on flaws](#known-flaws-and-next-steps)
