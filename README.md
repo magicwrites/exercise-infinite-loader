@@ -72,7 +72,7 @@ Given another set of 8 hours, I would:
 - 15m on initial loading state
 - 1h for the infinite scroll mechanics, including memoization for the list entries
 - v1.0.0 🎉
-- 15m on moving some constants to better locations, [updates on flaws](#known-flaws-and-next-steps)
+- 15m on moving some constants to better locations, [updates on flaws](#known-flaws)
 - 15m on adding a missing "generic" API loader requirement and moving some files around
 - v1.1.0
 - 15m on marking the objectives as done, final review of the task itself
