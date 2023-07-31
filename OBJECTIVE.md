@@ -6,7 +6,7 @@ Create an infinite loader component, with the following requirements:
 - The code should be written in Typescript, using the latest React paradigms. `// latest react paradigms = functional rather than class components`
 - The infinite loader should be generic:
   - it needs to work with any API which supports pagination `// any API = generic types + fetcher function on a hook`
-  - it needs to be able to render any kind of content the consumer of the component requires. `// render any content = higher order component`
+  - it needs to be able to render any kind of content the consumer of the component requires. `// render any content = higher order component? in the end I have just passed a list component`
 - On scrolling to the end of the view, it should fetch and render the next results. `// intersection observer API `
 - The component needs to take performance into consideration. `// memoize the item rendering`
 
