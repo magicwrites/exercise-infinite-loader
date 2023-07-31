@@ -20,6 +20,8 @@ Resources that I have found useful in addressing the challenge:
 
 After a lecture of the above, I decided to base my solution on intersection observer API. Without explicit expectation to handle a lot of records ([unlike here](https://github.com/magicwrites/casumo-list/blob/master/OBJECTIVE.md#casumo-loves-lists)), I decided to keep it simple and avoid going into [virtualized](https://github.com/bvaughn/react-virtualized/blob/master/docs/creatingAnInfiniteLoadingList.md) solution. However, [memoization](https://stackoverflow.com/questions/73265434/react-infinite-scroll-how-to-not-re-render-previous-items) as an optimisation technique could be useful so I will return to the concept once the basic implementation is running.
 
+Also, [an article](https://www.developerway.com/posts/react-component-as-prop-the-right-way) which I have found useful when it comes to rendering a bit more dynamic and configurable lists.
+
 ## Testing strategy
 
 I will consider the application as done when:
@@ -35,6 +37,13 @@ The code contains some shortcomings, intentionally left out:
 
 - the list just keeps on growing, eventually the browser will die out, there is no "clean up" code or virtualisation in place to take care of that
 - the list could make a better use of high resolution screens, but that would complicate things significantly and responsivity was not a requirement
+
+## Next steps?
+
+Given another set of 8 hours, I would:
+
+- add a storybook for all the "atoms" in the components directory (skipped for now, it adds quite a lot of dependencies)
+- add prettier as a development static code analysis and formatting tool (skipped for the same reason as above)
 
 ## Time spent: 5h
 
@@ -62,6 +71,7 @@ The code contains some shortcomings, intentionally left out:
 ### Refinement
 
 - 15m on moving some constants to better locations, [updates on flaws](#known-flaws-and-next-steps)
-- 15m on adding a missing "generic" loader requirement and moving some files around
+- 15m on adding a missing "generic" API loader requirement and moving some files around
 - v1.1.0
 - 15m on marking the objectives as done, final review of the task itself
+- 1h 30m on actually building the Loader component 😱 addressing the configurable rendering part

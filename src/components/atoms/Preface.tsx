@@ -1,5 +1,5 @@
 import { Link } from './Link'
-import { GITHUB_URL } from '../constants'
+import { GITHUB_URL } from './../../constants'
 
 export const Preface = () => (
   <section className="flex flex-col gap-4">

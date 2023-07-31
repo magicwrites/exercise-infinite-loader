@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
-export const getFirstPage = () => Math.round(Math.random() * 10) // make the application less stagnant
+export const getFirstPage = () => Math.round(Math.random() * 10) // make the application a bit more joyful
 
-export const useInfiniteLoading = <TItem>({ fetcher }: { fetcher: (page: number) => Promise<Array<TItem> | undefined> }) => {
-    const [entries, setEntries] = useState<Array<TItem>>([])
+export const useInfiniteLoading = <TEntry>({ fetcher }: { fetcher: (page: number) => Promise<Array<TEntry> | undefined> }) => {
+    const [entries, setEntries] = useState<Array<TEntry>>([])
     const initialized = useRef(false);
     const page = useRef(getFirstPage());
 

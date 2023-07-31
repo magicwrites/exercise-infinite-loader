@@ -1,37 +1,20 @@
-import { useEffect, useRef } from "react";
-import { useInfiniteLoading } from "./hooks/loader";
-import { Preface } from './components/Preface'
-import { List } from './components/List'
+import { Preface } from './components/atoms/Preface'
 import { FORCED_WIDTH } from './constants'
-import { Indicator } from "./components/Indicator";
-import { SkeletonArmy } from "./components/SkeletonArmy";
-import { fetchEntries, type TEntry } from "./domain/entries";
+import { Loader } from "./components/Loader"
+
+import { fetchEntries as fetchPicsumEntries } from "./domain/picsum";
+import { List as PicsumList } from "./components/List.picsum";
+
+import { fetchEntries as fetchCatEntries } from "./domain/catapi";
+import { List as CatList } from "./components/List.catapi";
+
+const PicsumUseCase = () =>
+  <Loader fetcher={fetchPicsumEntries} List={PicsumList} />
+
+const CatUseCase = () =>
+  <Loader fetcher={fetchCatEntries} List={CatList} />
 
 export const App = () => {
-  const { entries, addEntries } = useInfiniteLoading<TEntry>({ fetcher: fetchEntries });
-  const trigger = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        if (entries[0].isIntersecting) {
-          addEntries()
-        }
-      },
-      { threshold: 1 }
-    );
-
-    if (trigger.current) {
-      observer.observe(trigger.current);
-    }
-
-    return () => {
-      if (trigger.current) {
-        observer.unobserve(trigger.current);
-      }
-    };
-  }, [trigger])
-
   return (
     <div className="flex flex-col items-center">
       <section className="p-4 sm:p-8 m-auto flex flex-col gap-8 box-content" style={{ maxWidth: FORCED_WIDTH }}>
@@ -39,14 +22,7 @@ export const App = () => {
           <Preface />
         </header>
 
-        <main className="flex flex-col gap-8">
-          {entries.length ? <List entries={entries} /> : <SkeletonArmy />}
-          <div ref={trigger} />
-        </main>
-
-        <footer>
-          <Indicator />
-        </footer>
+        {Math.random() > 0.5 ? <PicsumUseCase /> : <CatUseCase />}
       </section>
     </div>
   )
