@@ -48,7 +48,7 @@ Given another set of 8 hours, I would:
 - moved constants to environmental variables, `.env.sample` would suit this application better
 - reconsider whether there is a better way to configure how rendering of items should work
 
-## Time spent: 7h 30m
+## Time spent: 7h 45m
 
 ### Preparations: 2h
 
@@ -81,3 +81,4 @@ Given another set of 8 hours, I would:
 ### Refinement
 
 - 15m to update docs, run prettier
+- v1.2.1 🎉 good enough
