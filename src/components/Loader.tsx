@@ -8,7 +8,7 @@ interface ILoaderProps<T> {
   List: ComponentType<{ entries: Array<T> }>;
 }
 
-export const Loader = <T extends Object>({
+export const Loader = <T extends object>({
   fetcher,
   List,
 }: ILoaderProps<T>) => {
@@ -34,7 +34,7 @@ export const Loader = <T extends Object>({
         observer.unobserve(trigger.current);
       }
     };
-  }, [trigger]);
+  }, [addEntries, trigger]);
 
   return (
     <>

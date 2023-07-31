@@ -24,7 +24,7 @@ Also, [an article](https://www.developerway.com/posts/react-component-as-prop-th
 
 ## Testing strategy
 
-I will consider the application as done when:
+I consider the application as done when:
 
 - all the objectives are met
 - the application and the code looks reasonably well
@@ -37,9 +37,10 @@ The code contains some shortcomings, intentionally left out:
 
 - the list just keeps on growing, eventually the browser will die out, there is no "clean up" code or virtualisation in place to take care of that
 - the list could make a better use of high resolution screens, but that would complicate things significantly and responsivity was not a requirement
-- loader relies on [`<T extends Object>`](https://stackoverflow.com/a/53958176), I am not really sure whether I did it right
+- loader relies on [`<T extends object>`](https://stackoverflow.com/a/53958176), I am not really sure whether I did it right
+- there is an edge case when sometimes the loading fails to trigger as you refresh the page while half-way through the scrolling
 
-## Next steps?
+## Next steps
 
 Given another set of 8 hours, I would:
 
@@ -47,8 +48,9 @@ Given another set of 8 hours, I would:
 - add prettier as a development static code analysis and formatting tool (should be there from the start really)
 - moved constants to environmental variables, `.env.sample` would suit this application better
 - reconsider whether there is a better way to configure how rendering of items should work
+- attempt to fix the known flaws
 
-## Time spent: 7h 45m
+## Time spent: 8h
 
 ### Preparations: 2h
 
@@ -78,7 +80,9 @@ Given another set of 8 hours, I would:
 - 15m on moving things around in directories for arguably more intuitive splits
 - v1.2.0 🎉
 
-### Refinement
+### Refinement 30m
 
 - 15m to update docs, run prettier
-- v1.2.1 🎉 good enough
+- v1.2.1
+- 15m on lint errors, notably added useCallback for the hook, covered an edge case with more unique list item keys
+- v1.2.2 🎉 good enough?

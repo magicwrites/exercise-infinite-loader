@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export const getFirstPage = () => Math.round(Math.random() * 10); // make the application a bit more joyful
 
@@ -11,14 +11,14 @@ export const useInfiniteLoading = <TEntry>({
   const initialized = useRef(false);
   const page = useRef(getFirstPage());
 
-  const addEntries = async () => {
+  const addEntries = useCallback(async () => {
     const newEntries = await fetcher(page.current);
 
     if (newEntries) {
       setEntries((existing) => [...existing, ...newEntries]);
       page.current += 1;
     }
-  };
+  }, [fetcher]);
 
   useEffect(() => {
     if (initialized.current) {

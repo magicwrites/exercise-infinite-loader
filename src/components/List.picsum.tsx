@@ -8,7 +8,7 @@ export const List = ({ entries }: { entries: Array<TPicsumEntry> }) => (
         author={entry.author}
         image={entry.download_url}
         href={entry.url}
-        key={entry.id}
+        key={entry.id + entry.url}
       />
     ))}
   </>
