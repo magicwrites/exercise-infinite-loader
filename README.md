@@ -22,7 +22,12 @@ After a lecture of the above, I decided to base my solution on intersection obse
 
 ## Testing strategy
 
-`// todo`
+I will consider the application as done when:
+
+- all the objectives are met
+- the application and the code looks reasonably well
+- the application is deployed online
+- the application works on on 300px viewport width resolution and above on chrome
 
 ## Known flaws
 
@@ -58,3 +63,5 @@ The code contains some shortcomings, intentionally left out:
 
 - 15m on moving some constants to better locations, [updates on flaws](#known-flaws-and-next-steps)
 - 15m on adding a missing "generic" loader requirement and moving some files around
+- v1.1.0
+- 15m on marking the objectives as done, final review of the task itself
