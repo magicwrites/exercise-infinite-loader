@@ -45,7 +45,7 @@ Given another set of 8 hours, I would:
 - add a storybook for all the "atoms" in the components directory (skipped for now, it adds quite a lot of dependencies)
 - add prettier as a development static code analysis and formatting tool (skipped for the same reason as above)
 
-## Time spent: 5h
+## Time spent: 7h 30m
 
 ### Preparations: 2h
 
@@ -62,16 +62,15 @@ Given another set of 8 hours, I would:
 - 45m on refinement: extracting the smaller components, variables and adding loading indicators
 - v0.1.0 🎉
 
-### Implementation 1h 15m
+### Implementation 3h 45m
 
 - 15m on initial loading state
 - 1h for the infinite scroll mechanics, including memoization for the list entries
 - v1.0.0 🎉
-
-### Refinement
-
 - 15m on moving some constants to better locations, [updates on flaws](#known-flaws-and-next-steps)
 - 15m on adding a missing "generic" API loader requirement and moving some files around
 - v1.1.0
 - 15m on marking the objectives as done, final review of the task itself
 - 1h 30m on actually building the Loader component 😱 addressing the configurable rendering part
+- 15m on moving things around in directories for arguably more intuitive splits
+- v1.2.0 🎉
